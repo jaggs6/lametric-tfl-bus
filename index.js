@@ -8,7 +8,7 @@ const port = 3000;
 const server = http.createServer((req, res) => {
   if(req.url != '/favicon.ico') {
     console.log(req.url);
-    const url = 'https://api.tfl.gov.uk/StopPoint' + req.url + '/Arrivals?';
+    const url = 'https://api.tfl.gov.uk/StopPoint' + req.url + '/Arrivals';
     var resp = request('GET', url);
     var response = JSON.parse(resp.getBody());
 
@@ -26,7 +26,7 @@ const server = http.createServer((req, res) => {
     if(output === '') {
       output = 'no buses';
     } else {
-      output = response[0].lineName + ' - ' + output;
+      output = response[0].lineName + ' in ' + output;
     }
     res.statusCode = resp.statusCode;
     res.setHeader('Content-Type', 'application/json');
