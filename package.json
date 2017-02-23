@@ -6,10 +6,11 @@
   "repository": "https://github.com/jaggs6/lametric-tfl-bus",
   "author": "Jagdeep Nagpal",
   "license": "MIT",
-  "scripts":{
-    "postmerge":"yarn"
+  "scripts": {
+    "postmerge": "yarn"
   },
   "dependencies": {
+    "request": "^2.79.0",
     "sort-by": "^1.2.0",
     "sync-request": "^4.0.1"
   },
