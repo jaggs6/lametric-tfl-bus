@@ -16,14 +16,14 @@ app.get('/', function(req, res) {
     json.forEach(function(bus) {
       const time = bus.timeToStation;
       const minutes = Math.floor(time / 60);
-      const goalFrame = ',{"goalData":{"start":0,"current":' + minutes + ',"end":' + Math.floor(max.timeToStation / 60) + ',"unit":"mins"},"icon":null}';
+      const goalFrame = ',{"goalData":{"start":0,"current":' + minutes + ',"end":' + Math.floor(max.timeToStation / 60) + ',"unit":" mins"},"icon":null}';
       goalFrames = goalFrames + goalFrame;
     });
 
     if(goalFrames === '') {
       output = 'no buses';
     } else {
-      output = json[0].lineName + ' -> ' + json[0].towards;
+      output = json[0].lineName + ' -> ' + json[0].towards + ' - ' + json.length + ' buses';
     }
     const firstFrame = '{"text":"' + output + '","icon":"i996"}';
 
