@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "request": "^2.79.0",
-    "sort-by": "^1.2.0",
-    "sync-request": "^4.0.1"
+    "sync-request": "^4.0.1",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "husky": "^0.13.1"
