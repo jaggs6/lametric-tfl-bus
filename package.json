@@ -10,8 +10,8 @@
     "postmerge": "yarn"
   },
   "dependencies": {
+    "express": "^4.14.1",
     "request": "^2.79.0",
-    "sync-request": "^4.0.1",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
