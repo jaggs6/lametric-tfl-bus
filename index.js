@@ -2,13 +2,13 @@ const http = require('http');
 const request = require('sync-request');
 const sortBy = require('sort-by');
 
-const hostname = '54.173.205.17';
-const port = 3001;
+const hostname = '0.0.0.0';
+const port = 3000;
 
 const server = http.createServer((req, res) => {
   if(req.url != '/favicon.ico') {
     console.log(req.url);
-    const url = 'https://api.tfl.gov.uk/StopPoint' + req.url + '/Arrivals';
+    const url = 'https://api.tfl.gov.uk/StopPoint' + req.url + '/Arrivals?';
     var resp = request('GET', url);
     var response = JSON.parse(resp.getBody());
 
@@ -22,12 +22,15 @@ const server = http.createServer((req, res) => {
     });
     output = output.slice(0, -1);
     output = output.trim();
+
     if(output === '') {
       output = 'no buses';
+    } else {
+      output = response[0].lineName + ' - ' + output;
     }
     res.statusCode = resp.statusCode;
     res.setHeader('Content-Type', 'application/json');
-    res.end('{"frames": [{"text": "' + response[0].lineName + ' - ' + output + '","icon": "i996"}]}');
+    res.end('{"frames": [{"text": "' + output + '","icon": "i996"}]}');
   }
 });
 
