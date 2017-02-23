@@ -1,0 +1,13 @@
+{
+  "name": "tfl-bus-lametric",
+  "version": "1.0.0",
+  "description": "TFL Bus server for lametric time",
+  "main": "index.js",
+  "repository": "github.com/jaggs/tfl-bus-lametric",
+  "author": "Jagdeep Nagpal",
+  "license": "MIT",
+  "dependencies": {
+    "sort-by": "^1.2.0",
+    "sync-request": "^4.0.1"
+  }
+}
