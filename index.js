@@ -6,6 +6,7 @@ const _ = require('underscore');
 
 var app = express();
 app.get('/', function(req, res) {
+  console.log(req.headers);
   const url = 'https://api.tfl.gov.uk/StopPoint/' + req.query.stop_id + '/Arrivals';
   request(url, (err, response, body) => {
     let json = JSON.parse(body);
