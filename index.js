@@ -22,7 +22,7 @@ app.get('/', function(req, res) {
     });
 
     if(goalFrames === '') {
-      output = 'no buses';
+      output = 'no bus';
     } else {
       output = json[0].lineName + ' -> ' + json[0].towards + ' - ' + json.length + ' buses';
     }
